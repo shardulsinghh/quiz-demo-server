@@ -2,7 +2,9 @@ import { Document } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 export type ResultDocument = Result & Document;
 
-@Schema()
+@Schema({
+  timestamps: true,
+})
 export class Result {
   @Prop({ required: true })
   question: string;
